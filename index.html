@@ -9,7 +9,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #f8fafc;
+    background: linear-gradient(135deg, #e0f2fe, #f8fafc);
     color: #0f172a;
 }
 
@@ -17,13 +17,13 @@ body {
 nav {
     position: sticky;
     top: 0;
-    background: white;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
     padding: 15px;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 nav a {
-    margin: 0 10px;
+    margin: 0 12px;
     text-decoration: none;
     color: #0f172a;
     font-weight: 600;
@@ -38,10 +38,10 @@ header img {
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    object-fit: cover;
+    border: 3px solid #2563eb;
 }
 header h1 {
-    font-size: 40px;
+    font-size: 42px;
 }
 header p {
     color: #64748b;
@@ -52,43 +52,49 @@ header p {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    background: #2563eb;
+    background: linear-gradient(45deg, #2563eb, #3b82f6);
     color: white;
     border-radius: 8px;
     text-decoration: none;
+    transition: 0.3s;
+}
+.btn:hover {
+    transform: scale(1.05);
 }
 
 /* SECTION */
 section {
     padding: 50px 20px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
 }
 
 h2 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* SKILLS */
 .skills span {
     display: inline-block;
-    background: #e2e8f0;
+    background: white;
     padding: 10px;
     margin: 5px;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 /* CARDS */
 .card {
-    background: white;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
     padding: 20px;
     margin-top: 15px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: 0.3s;
 }
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.01);
 }
 
 /* IMAGE */
@@ -121,31 +127,29 @@ footer {
 
 <!-- HERO -->
 <header>
-    <img src="profile.jpg" alt="Profile"
-         onerror="this.src='https://via.placeholder.com/130'">
-
+    <img src="profile.jpg" onerror="this.src='https://via.placeholder.com/130'">
     <h1>Anmol Srivastava</h1>
-    <p>BCA Final Year Student | Aspiring Web Developer</p>
+    <p>Aspiring Web Developer | BCA Student</p>
 
-    <a class="btn" href="calculator.html" target="_blank">Calculator</a>
-    <a class="btn" href="todo-design.html" target="_blank">To-Do App</a>
-    <a class="btn" href="resume.pdf" target="_blank">Resume</a>
+    <a class="btn" href="calculator.html">Calculator</a>
+    <a class="btn" href="todo-design.html">To-Do App</a>
+    <a class="btn" href="resume.pdf">Resume</a>
 </header>
 
 <!-- ABOUT -->
 <section id="about">
     <h2>About Me</h2>
-    <p>
-        I am a BCA final-year student with strong interest in web development and technology.
-        Alongside my technical education, I am pursuing a BA degree to enhance analytical thinking 
-        and communication skills.
-    </p>
+    <div class="card">
+        <p>
+            Passionate BCA student with strong interest in web development.
+            Skilled in building clean and functional web applications.
+        </p>
+    </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
     <h2>Skills</h2>
-
     <div class="skills">
         <span>HTML</span>
         <span>CSS</span>
@@ -162,23 +166,14 @@ footer {
 
     <div class="card">
         <h3>BCA - Manipal University Jaipur</h3>
-        <p>2023 – 2026 | Pursuing</p>
+        <p>2023 – 2026</p>
     </div>
 
     <div class="card">
         <h3>BA - University of Allahabad</h3>
-        <p>2023 – 2026 | Pursuing</p>
+        <p>2023 – 2026</p>
     </div>
 
-    <div class="card">
-        <h3>12th - Kendriya Vidyalaya No.2</h3>
-        <p>CBSE | 72.83%</p>
-    </div>
-
-    <div class="card">
-        <h3>10th - Kendriya Vidyalaya No.2</h3>
-        <p>CBSE | 80.20%</p>
-    </div>
 </section>
 
 <!-- PROJECTS -->
@@ -186,28 +181,14 @@ footer {
     <h2>Projects</h2>
 
     <div class="card">
-        <img class="project-img" src="portfolio.jpg"
-             onerror="this.src='https://via.placeholder.com/600x300'">
-        <h3>Portfolio Website</h3>
-        <p>Personal portfolio website to showcase profile.</p>
-    </div>
-
-    <div class="card">
-        <img class="project-img" src="calculator.jpg"
-             onerror="this.src='https://via.placeholder.com/600x300'">
+        <img class="project-img" src="calculator.jpg">
         <h3>Calculator App</h3>
-        <p>Advanced calculator using JavaScript.</p>
         <a class="btn" href="calculator.html">View</a>
     </div>
 
-    <!-- NEW TODO PROJECT -->
     <div class="card">
-        <h3>Smart Task Manager (Advanced)</h3>
-        <p>
-            A task management web app with completed/pending tracking, 
-            statistics, and local storage using JavaScript.
-        </p>
-        <a class="btn" href="todo-design.html">View Project</a>
+        <h3>Smart Task Manager</h3>
+        <a class="btn" href="todo-design.html">View</a>
     </div>
 
 </section>
@@ -215,20 +196,21 @@ footer {
 <!-- RESUME -->
 <section id="resume">
     <h2>Resume</h2>
-    <a class="btn" href="resume.pdf">Download Resume</a>
+    <div class="card">
+        <a class="btn" href="resume.pdf">Download Resume</a>
+    </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
     <h2>Contact</h2>
-    <p>Email: anmol.2314511188@mujonline.edu.in</p>
-    <p>Phone: +91 9140359639</p>
-    <p>
-        <a href="https://www.linkedin.com/in/anmol-now" target="_blank">LinkedIn</a>
-    </p>
+    <div class="card">
+        <p>Email: anmol.2314511188@mujonline.edu.in</p>
+        <p>Phone: +91 9140359639</p>
+        <p><a href="https://www.linkedin.com/in/anmol-now">LinkedIn</a></p>
+    </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p>© 2026 Anmol Srivastava</p>
 </footer>

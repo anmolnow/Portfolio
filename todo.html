@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Task Manager</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f4c4b7, #f8fafc);
+}
+
+/* Container */
+.container {
+    width: 360px;
+    margin: auto;
+    margin-top: 30px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+/* Title */
+h2 {
+    text-align: center;
+    background: #f2b8a0;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Form */
+.form {
+    text-align: center;
+    margin-top: 10px;
+}
+
+input {
+    width: 65%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.add { background: #2563eb; color: white; }
+
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    background: #f1f5f9;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Task */
+.task {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border-bottom: 2px dotted black;
+    padding-bottom: 5px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.task span {
+    flex: 1;
+}
+
+/* Buttons */
+.complete { background: #22c55e; color: white; }
+.delete { background: #ef4444; color: white; }
+
+/* Completed */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>To Do List</h2>
+
+<!-- FORM -->
+<div class="form">
+    <input type="text" id="taskInput" placeholder="Write your task...">
+    <button class="add" onclick="addTask()">Add</button>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+    <span>Total: <b id="total">0</b></span>
+    <span>Done: <b id="done">0</b></span>
+    <span>Pending: <b id="pending">0</b></span>
+</div>
+
+<!-- TASK LIST -->
+<div id="taskList"></div>
+
+</div>
+
+<script>
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let colors = ["#c55a11","#f4a896","#cfcfcf","#e8d7c3"];
+
+function save() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function updateStats() {
+    let total = tasks.length;
+    let done = tasks.filter(t => t.done).length;
+    let pending = total - done;
+
+    document.getElementById("total").innerText = total;
+    document.getElementById("done").innerText = done;
+    document.getElementById("pending").innerText = pending;
+}
+
+function display() {
+    let list = document.getElementById("taskList");
+    list.innerHTML = "";
+
+    tasks.forEach((task, i) => {
+        let div = document.createElement("div");
+        div.className = "task";
+
+        div.innerHTML = `
+            <div class="dot" style="background:${colors[i % 4]}"></div>
+            <span class="${task.done ? 'completed' : ''}">
+                ${task.text}
+            </span>
+            <button class="complete" onclick="toggle(${i})">✔</button>
+            <button class="delete" onclick="del(${i})">❌</button>
+        `;
+
+        list.appendChild(div);
+    });
+
+    updateStats();
+}
+
+function addTask() {
+    let input = document.getElementById("taskInput");
+
+    if (input.value.trim() === "") return;
+
+    tasks.push({text: input.value, done: false});
+    input.value = "";
+
+    save();
+    display();
+}
+
+function toggle(i) {
+    tasks[i].done = !tasks[i].done;
+    save();
+    display();
+}
+
+function del(i) {
+    tasks.splice(i,1);
+    save();
+    display();
+}
+
+display();
+</script>
+
+</body>
+</html>

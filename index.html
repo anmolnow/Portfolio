@@ -13,7 +13,7 @@ body {
     color: #0f172a;
 }
 
-/* Navbar */
+/* NAVBAR */
 nav {
     position: sticky;
     top: 0;
@@ -24,12 +24,12 @@ nav {
 }
 nav a {
     margin: 0 15px;
-    color: #0f172a;
     text-decoration: none;
+    color: #0f172a;
     font-weight: 600;
 }
 
-/* Header */
+/* HERO */
 header {
     text-align: center;
     padding: 80px 20px;
@@ -37,9 +37,7 @@ header {
 header img {
     width: 130px;
     height: 130px;
-    object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 15px;
 }
 header h1 {
     font-size: 42px;
@@ -48,10 +46,10 @@ header p {
     color: #64748b;
 }
 
-/* Button */
+/* BUTTON */
 .btn {
     display: inline-block;
-    margin-top: 15px;
+    margin: 10px;
     padding: 10px 20px;
     background: #2563eb;
     color: white;
@@ -59,18 +57,14 @@ header p {
     text-decoration: none;
 }
 
-/* Sections */
+/* SECTIONS */
 section {
     padding: 50px 20px;
     max-width: 900px;
     margin: auto;
 }
 
-h2 {
-    margin-bottom: 15px;
-}
-
-/* Skills */
+/* SKILLS */
 .skills span {
     display: inline-block;
     background: #e2e8f0;
@@ -79,72 +73,73 @@ h2 {
     border-radius: 8px;
 }
 
-/* Cards */
+/* CARDS */
 .card {
     background: white;
     padding: 20px;
-    border-radius: 12px;
     margin-top: 15px;
+    border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-.card:hover {
-    transform: translateY(-5px);
 }
 
-/* Images */
-.project-img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-/* Footer */
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
     color: #64748b;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
     <a href="#contact">Contact</a>
 </nav>
 
-<!-- HEADER -->
+<!-- HERO -->
 <header>
-    <img src="profile.jpg" alt="Profile">
+    <img src="profile.jpg">
     <h1>Anmol Srivastava</h1>
-    <p>BCA Final Year Student | Aspiring Web Developer</p>
-    <a class="btn" href="calculator.html" target="_blank">View Calculator</a>
+    <p>Aspiring Web Developer | BCA Student</p>
+
+    <a class="btn" href="calculator.html">View Project</a>
+    <a class="btn" href="resume.pdf">Download Resume</a>
 </header>
 
 <!-- ABOUT -->
 <section id="about">
     <h2>About Me</h2>
     <p>
-        I am a BCA final-year student with a strong interest in web development and technology.
-        Skilled in programming fundamentals, AI tools, and digital solutions. Alongside technical
-        education, I am pursuing a BA degree to enhance analytical thinking and communication skills.
+        I am a BCA final-year student with strong interest in web development.
+        Along with my technical degree, I am also pursuing BA to improve analytical
+        and communication skills. I enjoy building simple and effective web solutions.
     </p>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
     <h2>Skills</h2>
+
+    <h4>Frontend</h4>
     <div class="skills">
         <span>HTML</span>
         <span>CSS</span>
-        <span>JavaScript (Basic)</span>
-        <span>C Programming</span>
+        <span>JavaScript</span>
+    </div>
+
+    <h4>Programming</h4>
+    <div class="skills">
+        <span>C</span>
+    </div>
+
+    <h4>Tools</h4>
+    <div class="skills">
         <span>MS Office</span>
         <span>AI Tools</span>
     </div>
@@ -155,18 +150,21 @@ footer {
     <h2>Projects</h2>
 
     <div class="card">
-        <img class="project-img" src="portfolio.jpg" alt="Portfolio Project">
-        <h3>Personal Portfolio Website</h3>
-        <p>Responsive website to showcase profile and skills.</p>
+        <h3>Portfolio Website</h3>
+        <p>Responsive personal portfolio website.</p>
     </div>
 
     <div class="card">
-        <img class="project-img" src="calculator.jpg" alt="Calculator Project">
-        <h3>Calculator Web Application</h3>
+        <h3>Calculator</h3>
         <p>Interactive calculator using HTML, CSS, JavaScript.</p>
-        <a class="btn" href="calculator.html" target="_blank">View Project</a>
+        <a class="btn" href="calculator.html">View</a>
     </div>
+</section>
 
+<!-- RESUME -->
+<section id="resume">
+    <h2>Resume</h2>
+    <a class="btn" href="resume.pdf">Download My Resume</a>
 </section>
 
 <!-- CONTACT -->
@@ -176,9 +174,7 @@ footer {
     <p>Phone: +91 9140359639</p>
     <p>
         LinkedIn: 
-        <a href="https://www.linkedin.com/in/anmol-now" target="_blank">
-            www.linkedin.com/in/anmol-now
-        </a>
+        <a href="https://www.linkedin.com/in/anmol-now">Profile</a>
     </p>
 </section>
 

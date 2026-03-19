@@ -38,6 +38,7 @@ header img {
     width: 130px;
     height: 130px;
     border-radius: 50%;
+    object-fit: cover;
     border: 3px solid #2563eb;
 }
 header h1 {
@@ -65,12 +66,12 @@ header p {
 /* SECTION */
 section {
     padding: 50px 20px;
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
 }
 
 h2 {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 /* SKILLS */
@@ -94,7 +95,7 @@ h2 {
     transition: 0.3s;
 }
 .card:hover {
-    transform: translateY(-8px) scale(1.01);
+    transform: translateY(-8px);
 }
 
 /* IMAGE */
@@ -129,11 +130,11 @@ footer {
 <header>
     <img src="profile.jpg" onerror="this.src='https://via.placeholder.com/130'">
     <h1>Anmol Srivastava</h1>
-    <p>Aspiring Web Developer | BCA Student</p>
+    <p>BCA Final Year Student | Aspiring Web Developer</p>
 
-    <a class="btn" href="calculator.html">Calculator</a>
-    <a class="btn" href="todo-design.html">To-Do App</a>
-    <a class="btn" href="resume.pdf">Resume</a>
+    <a class="btn" href="calculator.html" target="_blank">Calculator</a>
+    <a class="btn" href="todo-design.html" target="_blank">To-Do App</a>
+    <a class="btn" href="resume.pdf" target="_blank">Resume</a>
 </header>
 
 <!-- ABOUT -->
@@ -141,8 +142,9 @@ footer {
     <h2>About Me</h2>
     <div class="card">
         <p>
-            Passionate BCA student with strong interest in web development.
-            Skilled in building clean and functional web applications.
+            I am a BCA final-year student with strong interest in web development and technology.
+            Alongside my technical education, I am pursuing a BA degree to enhance analytical thinking 
+            and communication skills.
         </p>
     </div>
 </section>
@@ -174,6 +176,16 @@ footer {
         <p>2023 – 2026</p>
     </div>
 
+    <div class="card">
+        <h3>12th - Kendriya Vidyalaya No.2</h3>
+        <p>CBSE | 72.83%</p>
+    </div>
+
+    <div class="card">
+        <h3>10th - Kendriya Vidyalaya No.2</h3>
+        <p>CBSE | 80.20%</p>
+    </div>
+
 </section>
 
 <!-- PROJECTS -->
@@ -181,14 +193,28 @@ footer {
     <h2>Projects</h2>
 
     <div class="card">
-        <img class="project-img" src="calculator.jpg">
-        <h3>Calculator App</h3>
-        <a class="btn" href="calculator.html">View</a>
+        <img class="project-img" src="portfolio.jpg"
+             onerror="this.src='https://via.placeholder.com/600x300'">
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio website.</p>
     </div>
 
     <div class="card">
-        <h3>Smart Task Manager</h3>
-        <a class="btn" href="todo-design.html">View</a>
+        <img class="project-img" src="calculator.jpg"
+             onerror="this.src='https://via.placeholder.com/600x300'">
+        <h3>Calculator App</h3>
+        <p>Advanced calculator using JavaScript.</p>
+        <a class="btn" href="calculator.html">View</a>
+    </div>
+
+    <!-- TODO PROJECT -->
+    <div class="card">
+        <h3>Smart Task Manager (Advanced)</h3>
+        <p>
+            Task management app with completed/pending tracking, 
+            statistics and local storage.
+        </p>
+        <a class="btn" href="todo-design.html">View Project</a>
     </div>
 
 </section>
@@ -207,7 +233,9 @@ footer {
     <div class="card">
         <p>Email: anmol.2314511188@mujonline.edu.in</p>
         <p>Phone: +91 9140359639</p>
-        <p><a href="https://www.linkedin.com/in/anmol-now">LinkedIn</a></p>
+        <p>
+            <a href="https://www.linkedin.com/in/anmol-now" target="_blank">LinkedIn</a>
+        </p>
     </div>
 </section>
 

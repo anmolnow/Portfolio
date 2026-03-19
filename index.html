@@ -9,21 +9,21 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+    background: #f8fafc;
     color: #0f172a;
 }
 
-/* NAV */
+/* NAVBAR */
 nav {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(10px);
+    background: white;
     padding: 15px;
     text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 nav a {
-    margin: 0 12px;
+    margin: 0 10px;
     text-decoration: none;
     color: #0f172a;
     font-weight: 600;
@@ -36,15 +36,18 @@ header {
 }
 header img {
     width: 130px;
+    height: 130px;
     border-radius: 50%;
-    border: 3px solid #2563eb;
+    object-fit: cover;
+}
+header h1 {
+    font-size: 40px;
 }
 
-/* Typing Text */
+/* Typing */
 .typing {
-    font-size: 20px;
     color: #2563eb;
-    margin-top: 10px;
+    font-weight: 600;
 }
 
 /* BUTTON */
@@ -52,73 +55,84 @@ header img {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    background: linear-gradient(45deg, #2563eb, #3b82f6);
+    background: #2563eb;
     color: white;
     border-radius: 8px;
     text-decoration: none;
     transition: 0.3s;
 }
 .btn:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
 }
 
-/* SECTIONS */
+/* SECTION */
 section {
     padding: 50px 20px;
     max-width: 900px;
     margin: auto;
 }
 
-/* CARDS */
-.card {
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    margin-top: 15px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s;
-}
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
+h2 {
+    margin-bottom: 15px;
 }
 
 /* SKILLS */
 .skills span {
     display: inline-block;
-    background: white;
+    background: #e2e8f0;
     padding: 10px;
     margin: 5px;
-    border-radius: 10px;
+    border-radius: 8px;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(30px);
+}
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.card:hover {
+    transform: translateY(-5px);
 }
 
 /* IMAGE */
 .project-img {
     width: 100%;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
+    color: #64748b;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#education">Education</a>
 <a href="#projects">Projects</a>
+<a href="#resume">Resume</a>
 <a href="#contact">Contact</a>
 </nav>
 
+<!-- HERO -->
 <header>
 <img src="profile.jpg" onerror="this.src='https://via.placeholder.com/130'">
 <h1>Anmol Srivastava</h1>
@@ -127,93 +141,128 @@ footer {
 
 <a class="btn" href="calculator.html">Calculator</a>
 <a class="btn" href="todo-design.html">To-Do App</a>
+<a class="btn" href="resume.pdf">Resume</a>
 </header>
 
+<!-- ABOUT -->
 <section id="about">
-<h2>About</h2>
+<h2>About Me</h2>
 <div class="card">
-<p>BCA student passionate about web development and building real-world applications.</p>
+<p>
+I am a BCA final-year student with strong interest in web development and technology.
+</p>
 </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
 <h2>Skills</h2>
 <div class="skills">
 <span>HTML</span>
 <span>CSS</span>
 <span>JavaScript</span>
-<span>C</span>
+<span>C Programming</span>
+<span>MS Office</span>
+<span>AI Tools</span>
 </div>
 </section>
 
+<!-- EDUCATION -->
 <section id="education">
 <h2>Education</h2>
-<div class="card">BCA - Manipal University Jaipur</div>
-<div class="card">BA - University of Allahabad</div>
+
+<div class="card">
+<h3>BCA - Manipal University Jaipur</h3>
+<p>2023 – 2026</p>
+</div>
+
+<div class="card">
+<h3>BA - University of Allahabad</h3>
+<p>2023 – 2026</p>
+</div>
+
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
 <h2>Projects</h2>
 
 <div class="card">
-<h3>Calculator</h3>
-<a class="btn" href="calculator.html">View</a>
+<img class="project-img" src="portfolio.jpg">
+<h3>Portfolio Website</h3>
 </div>
 
 <div class="card">
+<img class="project-img" src="calculator.jpg">
+<h3>Calculator App</h3>
+<a class="btn" href="calculator.html">View</a>
+</div>
+
+<!-- TODO ADDED -->
+<div class="card">
 <h3>Smart Task Manager</h3>
+<p>Advanced To-Do app with local storage & tracking</p>
 <a class="btn" href="todo-design.html">View</a>
 </div>
 
 </section>
 
+<!-- RESUME -->
+<section id="resume">
+<h2>Resume</h2>
+<a class="btn" href="resume.pdf">Download Resume</a>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
 <h2>Contact</h2>
-<div class="card">
 <p>Email: anmol.2314511188@mujonline.edu.in</p>
-</div>
+<p>Phone: +91 9140359639</p>
+<p>
+<a href="https://www.linkedin.com/in/anmol-now" target="_blank">LinkedIn</a>
+</p>
 </section>
 
 <footer>
-<p>© 2026 Anmol</p>
+<p>© 2026 Anmol Srivastava</p>
 </footer>
 
 <script>
 /* Typing Effect */
-const text = ["Aspiring Web Developer", "JavaScript Learner", "Future Software Engineer"];
-let i = 0, j = 0, current = "", isDeleting = false;
+const words = ["Aspiring Web Developer", "JavaScript Learner", "Future Software Engineer"];
+let i=0,j=0,current="",isDeleting=false;
 
-function type() {
-    current = text[i];
-    
-    if (!isDeleting) {
-        document.getElementById("typing").innerHTML = current.substring(0, j++);
-        if (j > current.length) {
-            isDeleting = true;
-            setTimeout(type, 1000);
-            return;
-        }
-    } else {
-        document.getElementById("typing").innerHTML = current.substring(0, j--);
-        if (j < 0) {
-            isDeleting = false;
-            i = (i + 1) % text.length;
-        }
-    }
-    setTimeout(type, isDeleting ? 50 : 100);
+function type(){
+current=words[i];
+
+if(!isDeleting){
+document.getElementById("typing").innerHTML=current.substring(0,j++);
+if(j>current.length){
+isDeleting=true;
+setTimeout(type,1000);
+return;
+}
+}else{
+document.getElementById("typing").innerHTML=current.substring(0,j--);
+if(j<0){
+isDeleting=false;
+i=(i+1)%words.length;
+}
+}
+setTimeout(type,isDeleting?50:100);
 }
 type();
 
 /* Scroll Animation */
-const cards = document.querySelectorAll(".card");
+const cards=document.querySelectorAll(".card");
 
-window.addEventListener("scroll", () => {
-    cards.forEach(card => {
-        const top = card.getBoundingClientRect().top;
-        if (top < window.innerHeight - 50) {
-            card.classList.add("show");
-        }
-    });
+window.addEventListener("scroll",()=>{
+cards.forEach(card=>{
+let top=card.getBoundingClientRect().top;
+if(top<window.innerHeight-50){
+card.classList.add("show");
+}
+});
 });
 </script>
 

@@ -23,7 +23,7 @@ nav {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 nav a {
-    margin: 0 15px;
+    margin: 0 12px;
     text-decoration: none;
     color: #0f172a;
     font-weight: 600;
@@ -38,6 +38,7 @@ header img {
     width: 130px;
     height: 130px;
     border-radius: 50%;
+    object-fit: cover;
 }
 header h1 {
     font-size: 42px;
@@ -64,6 +65,10 @@ section {
     margin: auto;
 }
 
+h2 {
+    margin-bottom: 15px;
+}
+
 /* SKILLS */
 .skills span {
     display: inline-block;
@@ -80,6 +85,17 @@ section {
     margin-top: 15px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* PROJECT IMAGE */
+.project-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 /* FOOTER */
@@ -97,6 +113,7 @@ footer {
 <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
     <a href="#projects">Projects</a>
     <a href="#resume">Resume</a>
     <a href="#contact">Contact</a>
@@ -104,20 +121,20 @@ footer {
 
 <!-- HERO -->
 <header>
-    <img src="profile.jpg">
+    <img src="profile.jpg" alt="Profile">
     <h1>Anmol Srivastava</h1>
-    <p>Aspiring Web Developer | BCA Student</p>
+    <p>BCA Final Year Student | Aspiring Web Developer</p>
 
-    <a class="btn" href="calculator.html">View Project</a>
-    <a class="btn" href="resume.pdf">Download Resume</a>
+    <a class="btn" href="calculator.html" target="_blank">View Calculator</a>
+    <a class="btn" href="resume.pdf" target="_blank">Download Resume</a>
 </header>
 
 <!-- ABOUT -->
 <section id="about">
     <h2>About Me</h2>
     <p>
-        I am a BCA final-year student with strong interest in web development.
-        Along with my technical degree, I am also pursuing BA to improve analytical
+        I am a BCA final-year student with strong interest in web development and technology.
+        Alongside my technical education, I am pursuing a BA degree to enhance analytical thinking 
         and communication skills. I enjoy building simple and effective web solutions.
     </p>
 </section>
@@ -130,7 +147,7 @@ footer {
     <div class="skills">
         <span>HTML</span>
         <span>CSS</span>
-        <span>JavaScript</span>
+        <span>JavaScript (Basic)</span>
     </div>
 
     <h4>Programming</h4>
@@ -145,26 +162,67 @@ footer {
     </div>
 </section>
 
+<!-- EDUCATION -->
+<section id="education">
+    <h2>Education</h2>
+
+    <div class="card">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
+        <p><strong>Manipal University Jaipur</strong></p>
+        <p>2023 – 2026 | Current: 6th Semester</p>
+        <p>Status: Pursuing</p>
+    </div>
+
+    <div class="card">
+        <h3>Bachelor of Arts (Economics, Geography, English)</h3>
+        <p><strong>University of Allahabad</strong></p>
+        <p>2023 – 2026</p>
+        <p>Status: Pursuing</p>
+    </div>
+
+    <div class="card">
+        <h3>Class 12 (CBSE – Science, Medical)</h3>
+        <p><strong>Kendriya Vidyalaya No. 2, Gorakhpur</strong></p>
+        <p>2023 | Percentage: 72.83%</p>
+    </div>
+
+    <div class="card">
+        <h3>Class 10 (CBSE)</h3>
+        <p><strong>Kendriya Vidyalaya No. 2, Gorakhpur</strong></p>
+        <p>2021 | Percentage: 80.20%</p>
+    </div>
+
+    <div class="card">
+        <h3>Achievements & Activities</h3>
+        <p>
+            Actively participated in various co-curricular activities during school life and earned 
+            multiple certifications, demonstrating strong involvement and teamwork.
+        </p>
+    </div>
+</section>
+
 <!-- PROJECTS -->
 <section id="projects">
     <h2>Projects</h2>
 
     <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>Responsive personal portfolio website.</p>
+        <img class="project-img" src="portfolio.jpg">
+        <h3>Personal Portfolio Website</h3>
+        <p>Responsive website to showcase profile and skills.</p>
     </div>
 
     <div class="card">
-        <h3>Calculator</h3>
+        <img class="project-img" src="calculator.jpg">
+        <h3>Calculator Web Application</h3>
         <p>Interactive calculator using HTML, CSS, JavaScript.</p>
-        <a class="btn" href="calculator.html">View</a>
+        <a class="btn" href="calculator.html" target="_blank">View Project</a>
     </div>
 </section>
 
 <!-- RESUME -->
 <section id="resume">
     <h2>Resume</h2>
-    <a class="btn" href="resume.pdf">Download My Resume</a>
+    <a class="btn" href="resume.pdf" target="_blank">Download My Resume</a>
 </section>
 
 <!-- CONTACT -->
@@ -174,7 +232,9 @@ footer {
     <p>Phone: +91 9140359639</p>
     <p>
         LinkedIn: 
-        <a href="https://www.linkedin.com/in/anmol-now">Profile</a>
+        <a href="https://www.linkedin.com/in/anmol-now" target="_blank">
+            www.linkedin.com/in/anmol-now
+        </a>
     </p>
 </section>
 

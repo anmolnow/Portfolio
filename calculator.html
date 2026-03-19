@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculator | Anmol</title>
+<title>Advanced Calculator | Anmol</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial;
-    background: #0f172a;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #e0f2fe, #f8fafc);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
-/* Calculator Box */
+/* Calculator Container */
 .calculator {
-    background: #1e293b;
-    padding: 20px;
+    background: white;
+    padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    width: 300px;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* Display */
@@ -32,13 +32,13 @@ body {
     font-size: 24px;
     text-align: right;
     padding: 10px;
-    border: none;
-    outline: none;
     margin-bottom: 15px;
+    border: none;
     border-radius: 10px;
+    background: #f1f5f9;
 }
 
-/* Buttons Grid */
+/* Grid Layout */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -47,7 +47,7 @@ body {
 
 /* Buttons */
 button {
-    height: 60px;
+    height: 55px;
     font-size: 18px;
     border: none;
     border-radius: 10px;
@@ -56,47 +56,54 @@ button {
 }
 
 /* Colors */
-.number { background: #334155; color: white; }
-.operator { background: #38bdf8; color: black; }
-.equal { background: #22c55e; color: black; }
+.number { background: #e2e8f0; }
+.operator { background: #2563eb; color: white; }
+.equal { background: #22c55e; color: white; }
 .clear { background: #ef4444; color: white; }
+.extra { background: #fbbf24; }
 
+/* Hover */
 button:hover {
     transform: scale(1.05);
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="calculator">
-    <input type="text" id="display" disabled>
 
-    <div class="buttons">
-        <button class="clear" onclick="clearDisplay()">C</button>
-        <button class="operator" onclick="append('/')">/</button>
-        <button class="operator" onclick="append('*')">*</button>
-        <button class="operator" onclick="deleteLast()">⌫</button>
+<input type="text" id="display" disabled>
 
-        <button class="number" onclick="append('7')">7</button>
-        <button class="number" onclick="append('8')">8</button>
-        <button class="number" onclick="append('9')">9</button>
-        <button class="operator" onclick="append('-')">-</button>
+<div class="buttons">
 
-        <button class="number" onclick="append('4')">4</button>
-        <button class="number" onclick="append('5')">5</button>
-        <button class="number" onclick="append('6')">6</button>
-        <button class="operator" onclick="append('+')">+</button>
+<button class="clear" onclick="clearDisplay()">C</button>
+<button class="extra" onclick="deleteLast()">⌫</button>
+<button class="extra" onclick="append('%')">%</button>
+<button class="operator" onclick="append('/')">÷</button>
 
-        <button class="number" onclick="append('1')">1</button>
-        <button class="number" onclick="append('2')">2</button>
-        <button class="number" onclick="append('3')">3</button>
-        <button class="equal" onclick="calculate()">=</button>
+<button class="number" onclick="append('7')">7</button>
+<button class="number" onclick="append('8')">8</button>
+<button class="number" onclick="append('9')">9</button>
+<button class="operator" onclick="append('*')">×</button>
 
-        <button class="number" onclick="append('0')">0</button>
-        <button class="number" onclick="append('.')">.</button>
-    </div>
+<button class="number" onclick="append('4')">4</button>
+<button class="number" onclick="append('5')">5</button>
+<button class="number" onclick="append('6')">6</button>
+<button class="operator" onclick="append('-')">−</button>
+
+<button class="number" onclick="append('1')">1</button>
+<button class="number" onclick="append('2')">2</button>
+<button class="number" onclick="append('3')">3</button>
+<button class="operator" onclick="append('+')">+</button>
+
+<button class="number" onclick="append('0')">0</button>
+<button class="number" onclick="append('.')">.</button>
+<button class="extra" onclick="square()">x²</button>
+<button class="equal" onclick="calculate()">=</button>
+
+</div>
+
 </div>
 
 <script>
@@ -109,8 +116,8 @@ function clearDisplay() {
 }
 
 function deleteLast() {
-    let current = document.getElementById("display").value;
-    document.getElementById("display").value = current.slice(0, -1);
+    let val = document.getElementById("display").value;
+    document.getElementById("display").value = val.slice(0, -1);
 }
 
 function calculate() {
@@ -120,6 +127,11 @@ function calculate() {
     } catch {
         alert("Invalid Expression");
     }
+}
+
+function square() {
+    let val = document.getElementById("display").value;
+    document.getElementById("display").value = val * val;
 }
 </script>
 
